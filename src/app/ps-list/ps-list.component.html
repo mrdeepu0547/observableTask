@@ -1,0 +1,43 @@
+<p>ps-list works!</p>
+<label class="card-title mr-2">Table size</label>
+<select
+class="form-control-sm"
+[(ngModel)]="pageSize"
+(ngModelChange)="setPageSize()">
+<option *ngFor="let size of paseSizes">{{ size }}</option>
+</select>
+<hr>
+<div class="d-flex ms-auto order-5">
+  <button class="btn btn-light" type="button" [disabled]="lowerBound<=0" (click)="onPrevious()">Previous</button>&nbsp;&nbsp;
+  <button class="btn btn-dark" type="button" (click)="onNext()">Next</button>
+</div>
+<div>
+  <table class="table ">
+    <table class="table table-success table-hover table-light">
+      <thead>
+        <tr>
+          <th>Ps Name</th>
+          <th>Home Site</th>
+          <th>MRN</th>
+          <th>SSN</th>
+          <th>City</th>
+          <th>State</th>
+          <th>Zip Code</th>
+          <th>Phone</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let data of psList ,let i = index">
+        <tr>
+          <td>{{data.PSName}}</td>
+          <td>{{data.PSId}}</td>
+          <td>{{data.homeSite}}</td>
+          <td>{{data.mrn}}</td>
+          <td>{{data.city}}</td>
+          <td>{{data.state}}</td>
+          <td>{{data.zipCode}}</td>
+          <td>{{data.phone}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </table>
+</div>

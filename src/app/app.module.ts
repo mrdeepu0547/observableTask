@@ -1,22 +1,32 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { CurrencyPipe } from '@angular/common';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CartComponent } from './cart/cart.component';
-import { CheckOutComponent } from './check-out/check-out.component';
+import { HelloComponent } from './hello.component';
+import { AvailItemsComponent } from './avail-items/avail-items.component';
+import { CartDataComponent } from './cart-data/cart-data.component';
+import { PsListComponent } from './ps-list/ps-list.component';
+import { AppRoutingModule } from './app-routing.module';
+
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    CartComponent,
-    CheckOutComponent
-  ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+     FormsModule,
+    AppRoutingModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  declarations: [
+    AppComponent,
+    HelloComponent,
+    AvailItemsComponent,
+    CartDataComponent,
+    PsListComponent,
+  ],
+  bootstrap: [AppComponent],
+  providers: [
+    CurrencyPipe
+  ]
 })
 export class AppModule { }
